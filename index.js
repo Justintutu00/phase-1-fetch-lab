@@ -4,14 +4,13 @@ function fetchBooks() {
     .then((books) => {
       renderBooks(books);
 
-      // ✅ Log the 5th book in the series (index 4)
       console.log("5th Book in the Series:", books[4]);
 
-      // ✅ Calculate the total number of pages in all books
+      //  Calculate the total number of pages in all books
       const totalPages = books.reduce((sum, book) => sum + book.numberOfPages, 0);
       console.log("Total Number of Pages:", totalPages);
       
-      // ✅ Display total pages on the webpage
+      // Display total pages on the webpage
       displayTotalPages(totalPages);
     })
     .catch((error) => console.error("Error fetching books:", error));
@@ -35,7 +34,7 @@ function renderBooks(books) {
   });
 }
 
-// ✅ Fetch the 1031st character and log it
+//  Fetch the 1031st character and log it
 function fetchCharacter1031() {
   fetch("https://anapioficeandfire.com/api/characters/1031")
     .then((resp) => resp.json())
@@ -43,7 +42,7 @@ function fetchCharacter1031() {
     .catch((error) => console.error("Error fetching character:", error));
 }
 
-// ✅ Display total pages on the webpage
+//  Display total pages on the webpage
 function displayTotalPages(totalPages) {
   const main = document.querySelector("main");
   const totalPagesElement = document.createElement("h3");
